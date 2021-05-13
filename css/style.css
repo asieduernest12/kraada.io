@@ -1,0 +1,135 @@
+body {
+    /* CSS HEX */
+    --sage: #c9cba3ff;
+    --peach: #ffe1a8ff;
+    --terra-cotta: #e26d5cff;
+    --catawba: #723d46ff;
+    --old-burgundy: #472d30ff;
+    
+    --text-light: rgb(238, 231, 231);
+    --text-dark: rgb(19, 17, 17);
+    --background-dark: var(--catawba);
+    --background-light: var(--sage);
+    
+    background: var(--background-light);
+    display: block;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    color: var(--text-light);
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    
+}
+
+section, header {
+    height: 90vh;
+    width: 90vw;
+    /* border: 1px solid ; */
+    margin: 40px;
+    background: var(--background-dark);
+}
+
+header {
+    text-align: center;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* card on header and section */
+section, header {
+    -webkit-box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59);
+    -moz-box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59);
+    box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59);
+    font-size: 1.4rem;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* large display */
+@media (min-width:801px){
+    section.date_or_day {
+        display: flex;
+    }
+
+    .date_section, .day_section {
+        width: 50%;
+        height: 100%;
+        border: 1px solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+/* mobile display */
+@media (max-width:800px){
+    section.date_or_day{
+        flex-flow: column nowrap;
+        height: unset;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .date_section, .day_section {
+        /* text-align: -webkit-center; */
+        width: 100%;
+        height: 50%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+       
+    }
+}
+
+
+.day_section {
+    background: var(--terra-cotta);
+}
+
+.day_section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+ .form_group {
+    width: 300px;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-bottom: 20px;
+    
+    
+}
+
+.day_reveal {
+    background: var(--peach);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
+    color: var(--text-dark);
+}
+
+span.day_name {
+    text-transform: capitalize;
+}
