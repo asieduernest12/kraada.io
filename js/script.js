@@ -85,7 +85,7 @@ function GhanaianName(){
         
     }
     async function loadKinship(){
-        let temp = await fetch('/js/info.js').then(res => res.json())
+        let temp = await fetch('js/info.js').then(res => res.json())
         _kinships = temp[0]
         console.table(_kinships);
     }
