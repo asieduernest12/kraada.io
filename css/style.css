@@ -8,8 +8,11 @@ body {
     
     --text-light: rgb(238, 231, 231);
     --text-dark: rgb(19, 17, 17);
-    --background-dark: var(--catawba);
-    --background-light: var(--sage);
+    /* --background-dark: var(--catawba);
+    --background-light: var(--sage); */
+
+    --background-dark: #ffffff;
+    --background-light: #ffffff;
     
     background: var(--background-light);
     display: block;
@@ -18,19 +21,26 @@ body {
     flex-direction: column;
     align-items: center;
     
-    color: var(--text-light);
-    font-family: 'Raleway', sans-serif;
+    color: var(--text-dark);
+    font-family: 'Tangerine', cursive;
     font-size: 16px;
     font-weight: 200;
     
+    --section-height: 100vh;
+    --section-width: 95vw;
 }
 
 section, header {
-    height: 90vh;
-    width: 90vw;
-    /* border: 1px solid ; */
+    min-height: var(--section-height);
+    height: var(--section-height);
+    width: var(--section-width);
     margin: 40px;
     background: var(--background-dark);
+    
+}
+
+section * {
+    font-size: 3.125rem;
 }
 
 header {
@@ -45,31 +55,76 @@ header {
 
 /* card on header and section */
 section, header {
-    -webkit-box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59);
+    /* -webkit-box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59);
     -moz-box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59);
-    box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59);
+    box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59); */
     font-size: 1.4rem;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow: hidden;
     text-align: center;
+}
+
+.landing__header {
+    font-size: 12.5rem;
+}
+
+.landing__action, .action__btn {
+    font-size: 2rem;
+}
+
+.action__btn {
+    background: #0000;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+.action__text {
+    font-family: "Gotham", monospace , Helvetica, sans-serif;
 }
 
 /* large display */
 @media (min-width:801px){
     section.date_or_day {
         display: flex;
+        flex-direction: column;
+        height: inherit;
+        min-height: var(--section-height);
     }
-
+    
     .date_section, .day_section {
-        width: 50%;
-        height: 100%;
-        border: 1px solid;
+        width: 100%;
+        height: var(--section-height);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
     
+    .date_section form {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .day_section__header, .date_section__header, .day_reveal__header {
+        margin-right: auto;
+        margin-left: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .day_section__footer, .day_reveal__footer {
+        margin-right: 2rem;
+        margin-left: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .form__days {   
+        width: 80%;
+    }
 }
 
 /* mobile display */
@@ -86,17 +141,17 @@ section, header {
     .date_section, .day_section {
         /* text-align: -webkit-center; */
         width: 100%;
-        height: 50%;
-        padding-top: 20px;
+        /* height: 100%; */
+        margin: 20px;
         padding-bottom: 20px;
-       
+        
+    }
+    
+    .form__days {
+        width: 100%;
     }
 }
 
-
-.day_section {
-    background: var(--terra-cotta);
-}
 
 .day_section form {
     display: flex;
@@ -109,27 +164,161 @@ form {
     flex-direction: column;
 }
 
- .form_group {
-    width: 300px;
-    border: 1px solid;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    margin-bottom: 20px;
-    
+.landing__header {
+    font-family: 'Italianno', cursive;
     
 }
 
+section.yom__name_sex form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.yom__name_sex .form_group:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.yom__name_sex .form_group:first-of-type {
+    margin-top: 2rem;
+}
+
+.yom__name_sex .input_group {
+    width:  20rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.yom__name_sex input[type=email]{
+    width: 450px;
+    height: 100px;
+    font-size: 1.8rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.yom__name_sex .btn_sex {
+    margin-left: 3.125rem;
+    margin-right: 3.125rem;
+}
+
+.form_group {
+    min-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-bottom: 20px; 
+}
+
 .day_reveal {
-    background: var(--peach);
+    /* background: var(--peach); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 2.4rem;
     color: var(--text-dark);
+    position: relative;
 }
 
-span.day_name {
+.day_name {
+    text-transform: uppercase;
+    font-family: 'Engagement', cursive;
+    font-size: 18rem;
+}
+
+
+.group__days {
+    display: flex;
+    width: 100%;
+    font-family: "trajanusbricksregular",serif;
+    --group_days_spacing: 5rem;
+}
+
+
+.group__days:first-of-type {
+    
+    justify-content: center;
+}
+
+.group__days .input_group {
+    width: 50%;
+    text-align: initial; 
+}
+
+.group__days .input_group label{
+    margin-left: var(--group_days_spacing);
+}
+
+.group__days .input_group:nth-of-type(2n+1) {
+    text-align: right;
+    
+}
+
+.group__days .input_group:nth-of-type(2n+1) label {
+    margin-right: var(--group_days_spacing);
+}
+
+.group__days:first-of-type .input_group {
+    
+    text-align: center;
+    padding: 0;
+}
+
+.group__days:first-of-type .input_group label{
+    
+    text-align: center;
+    padding: 0;
+}
+
+
+.group__days button {
+    display: none;
+}
+
+.group__days label {
+    text-transform: uppercase;
+}
+
+.btn_date_continue {
+    margin: auto;
+    background: #0000;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.reveal__body {
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+}
+
+.reveal__predicate {
+    font-family: 'Goudy Bookletter 1911', serif;
+
+}
+
+.reveal__character, .reveal__attributes {
+    font-family: "trajanusbricksregular",serif;
+}
+.reveal__character {
+    text-transform: uppercase;
+    text-decoration-line: line-through;
+}
+
+.reveal__attributes {
     text-transform: capitalize;
+}
+
+.reveal__attribute_item {
+    list-style: none;
+}
+
+input {
+    text-align: center;
+    border: none;
 }
