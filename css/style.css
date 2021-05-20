@@ -204,6 +204,9 @@ section.yom__name_sex form {
 .yom__name_sex .btn_sex {
     margin-left: 3.125rem;
     margin-right: 3.125rem;
+    background: #0000;
+    border: none;
+    cursor: pointer;
 }
 
 .form_group {
