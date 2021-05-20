@@ -339,3 +339,34 @@ input {
     background: #0000;
     cursor: pointer;
 }
+
+
+
+@keyframes flickerAnimation {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-o-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-moz-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-webkit-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  button {
+     -webkit-animation: flickerAnimation 3.5s infinite;
+     -moz-animation: flickerAnimation 3.5s infinite;
+     -o-animation: flickerAnimation 3.5s infinite;
+      animation: flickerAnimation 3.15s infinite;
+  }
+  
+  
