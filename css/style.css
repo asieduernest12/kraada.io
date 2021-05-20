@@ -1,3 +1,9 @@
+/* reset */
+button p {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     /* CSS HEX */
     --sage: #c9cba3ff;
@@ -300,18 +306,15 @@ section.yom__name_sex form {
     margin-bottom: 12rem;
 }
 
-.reveal__predicate {
+.reveal__predicate, .btn_sex {
     font-family: 'Goudy Bookletter 1911', serif;
 
 }
 
-.reveal__character, .reveal__attributes {
+ .reveal__attributes {
     font-family: "trajanusbricksregular",serif;
 }
-.reveal__character {
-    text-transform: uppercase;
-    text-decoration-line: line-through;
-}
+
 
 .reveal__attributes {
     text-transform: capitalize;
@@ -321,7 +324,18 @@ section.yom__name_sex form {
     list-style: none;
 }
 
+.reveal__attribute_item:first-of-type {
+    text-transform: uppercase;
+    text-decoration-line: line-through;
+}
+
 input {
     text-align: center;
     border: none;
+}
+
+.btn {
+    border: none;
+    background: #0000;
+    cursor: pointer;
 }

@@ -1,100 +1,95 @@
- [{
-    "sunday" :{
+[{
+    "Sunday" :{
         "male": {
-            "names": ["kwesi","akwesi"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Kwesi"],
+            "characteristics" : ["GREAT MENTOR", "Creative", "Intelligent", "Generous", "Helpful", "Deep Thinker"]
+            
         },
         
         "female": {
             "names": ["Esi"],
-            "song_of_praise": "",
-            "question": ""
-        }
-        
+            "characteristics" : ["MOST INFLUENTIAL", "Likes to be pampered", "Patient", "Confident", "Adaptable"]
+            
+        }  
     },
-    "monday" :{
+    
+    "Monday" :{
         "male": {
-            "names": ["kwado", "kwadwovi"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Kojo"],
+            "characteristics" : ["GREAT HUSBAND", "Enthusiasm", "Loyal", "Energetic", "Caring"]
+            
         },
         
         "female": {
-            "names": ["adwoa", "dwodaba", "adwo", "adwovi"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Adwoa"],
+            "characteristics" : ["GREAT FRIEND", "Passionate", "Graceful", "Know-it-all", "Observant"]
         }
-        
     },
-    "tuesday" :{
+    
+    "Tuesday" :{
         "male": {
-            "names": ["kwabena","koby"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Kobi"],
+            "characteristics" : ["GREAT BUSINESSMEN", "Persuasive", "Confident", "Smart", "Decent"]
+            
         },
         
         "female": {
-            "names": ["abena"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Abla"],
+            "characteristics" : ["GREAT PARENT", "Resourceful", "Responsible", "Reliable", "Foodie"]
+            
         }
-        
     },
-    "wednesday" :{
+    "Wednesday" :{
         "male": {
-            "names": ["kweku"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Kwaku"],
+            "characteristics" : ["GREAT PARENT", "Responsible", "Honest", "Talented", "Fashionable"]
+            
         },
         
         "female": {
-            "names": ["eku", "ekusika", "ekushika", "akushika"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Aku"],
+            "characteristics" : ["BEST WIVE", "Hard Working", "Caring", "Loyal", "Helpful"]
+            
         }
-        
     },
-    "thursday" :{
+    
+    "Thursday" :{
         "male": {
-            "names": ["yaw"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Yao"],
+            "characteristics" : ["Quick Problem Solver", "Clever", "Adaptable", "Ambitious", "Thoughtful"]
+            
         },
         
         "female": {
-            "names": ["yaa"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Yaa"],
+            "characteristics" : ["GREAT BOSS", "Confident", "Persistent", "Intelligent", "Optimistic"]
+            
         }
-        
     },
-    "friday" :{
+    
+    "Friday" :{
         "male": {
-            "names": ["kofi","fiifi"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Kofi"],
+            "characteristics" : ["GREAT FRIEND", "Funny", "Intelligent", "Responsive", "Helpful"]
+            
         },
         
         "female": {
-            "names": ["afua", "afi", "efua", "afiba", "efe"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Afi"],
+            "characteristics" : ["GREAT MENTOR", "Music Lover", "Deep Thinker", "Sensitive", "Talented"]
+            
         }
-        
     },
-    "saturday" :{
+    "Saturday" :{
         "male": {
-            "names": ["kwame","kwaamina"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Kwame"],
+            "characteristics" : ["GREAT TEAM LEADER", "Genius", "Generous", "Honest", "Thinker", "Music Lover"]
+            
         },
         
         "female": {
-            "names": ["ama"],
-            "song_of_praise": "",
-            "question": ""
+            "names": ["Ama"],
+            "characteristics" : ["PERFECT LOVER", "Dependable", "Generous", "Loyal", "Helpful"]
         }
-        
     }
 }]
