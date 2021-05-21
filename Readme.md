@@ -1,1 +1,1 @@
-Find your day name. (https://asieduernest12.github.io/yom)[visit yom]
+Find your day name. [visit yom](https://asieduernest12.github.io/yom)
