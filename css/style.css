@@ -4,6 +4,10 @@ button p {
 	margin: 0;
 }
 
+:root{
+	font-size: 12px;
+}
+
 body {
 	/* CSS HEX */
 	--sage: #c9cba3ff;
@@ -27,7 +31,7 @@ body {
 
 	color: var(--text-dark);
 	font-family: "Tangerine", cursive;
-	font-size: 16px;
+	font-size: 0.7em;
 	font-weight: 200;
 
 	--section-height: 100vh;
@@ -45,8 +49,6 @@ header {
 	background: var(--background-light);
 	/* display: none; */
 }
-
-
 
 section * {
 	font-size: 3.125rem;
@@ -349,18 +351,15 @@ button {
 	.day_reveal__header {
 		margin-right: auto;
 		margin-left: 2rem;
-		position: absolute;
-		top: 0;
-		left: 0;
+		margin-bottom: auto;
 	}
 
 	.day_section__footer,
-	.day_reveal__footer {
+	.day_reveal__footer,
+	.date_section__footer {
 		margin-right: 2rem;
 		margin-left: auto;
-		position: absolute;
-		right: 0;
-		bottom: 0;
+		margin-top: auto;
 	}
 
 	.form__days {
@@ -411,13 +410,15 @@ button {
 	.day_section__header,
 	.date_section__header,
 	.day_reveal__header {
-		margin-top: auto;
+		margin-bottom: auto;
+		margin-top: 5rem;
 	}
 
 	.day_section__footer,
 	.day_reveal__footer,
 	.date_section__footer {
-		margin-bottom: auto;
+		margin-top: auto;
+		margin-bottom: 5rem;
 	}
 
 	.day_name {
@@ -425,7 +426,8 @@ button {
 		margin-bottom: 1.5rem;
 	}
 }
-.hide_content.show_content, .hide_content.show_content {
+.hide_content.show_content,
+.hide_content.show_content {
 	visibility: visible;
 	display: flex !important;
 }
