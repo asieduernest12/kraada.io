@@ -25,7 +25,6 @@ function GhanaianName() {
 		if (_sex) navigate("#day_section");
 	}
 
-
 	function findDay() {
 		const day = document.querySelector("[name=day]").value;
 		const month = document.querySelector("[name=month]").value;
@@ -69,8 +68,23 @@ function GhanaianName() {
 		// document.querySelector("span.first_name").innerHTML = kinnames[0];
 		document.querySelector(".day_name").innerHTML = _kinship.names[0];
 		document.querySelector(".text__day").innerHTML = day_key;
-		document.querySelector(".reveal__attributes").innerHTML = _kinship.characteristics.map((_char) => `<li class="reveal__attribute_item">${_char}</li>`).join("");
-		window.location = window.location.pathname + "#day_reveal";
+		document.querySelector(".reveal__attributes").innerHTML = order(_kinship.characteristics).map((_char) => `<li class="reveal__attribute_item">${_char}</li>`).join("");
+		navigate("#day_reveal");
+	}
+
+	function order(characteristics) {
+		return [
+			characteristics[0],//maintain lead characteristic
+			...characteristics
+				.splice(1, characteristics.length)
+				.sort((a, b) => {
+					let result = 0;
+					if (a.length < b.length) result = -1;
+					else if (a.length > b.length) result = 1;
+					return result;
+				})//sort returns values in ascending order
+				.reverse(), //reverse sort to obtain a descending order array
+		];
 	}
 }
 
@@ -78,5 +92,5 @@ let gn = new GhanaianName();
 gn.loadKinship();
 
 (() => {
-	if (window.location.href.match("#")) window.location = window.location.pathname;
+	if (window.location.href.match("#")) gn.navigate("");
 })();
