@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<header class="yom__landing">
+		<header class="yom__landing hide_content" id="yom__landing">
 			<h1 class="landing__header">YOM</h1>
 			<div class="landing__action">
 				<button class="action__btn" onclick="gn.navigate('#yom__name_sex')">
@@ -26,7 +26,7 @@
 			</div>
 		</header>
 
-		<section class="yom__name_sex" id="yom__name_sex">
+		<section class="yom__name_sex hide_content" id="yom__name_sex">
 			<form onsubmit="gn.goToDaySection(event)" id="form__name_sex">
 				<div class="form_group">
 					<!-- <label for="email">Name</label> -->
@@ -50,8 +50,7 @@
 			</form>
 		</section>
 
-		<section class="date_or_day">
-			<div class="date_section" id="date_section">
+			<section class="date_section hide_content" id="date_section">
 				<div class="date_section__header">
 					<p>enter your birth date</p>
 				</div>
@@ -79,9 +78,9 @@
 					</div>
 				</form>
 				<div class="date_section__footer"></div>
-			</div>
+			</section>
 
-			<div class="day_section" id="day_section">
+			<section class="day_section hide_content" id="day_section">
 				<div class="day_section__header">
 					<p>what day were you born?</p>
 				</div>
@@ -141,10 +140,10 @@
 				<div class="day_section__footer">
 					<p class="btn" onclick="gn.navigate('#date_section')">not sure?</p>
 				</div>
-			</div>
+			</section>
 		</section>
 
-		<section class="day_reveal textcontainer" id="day_reveal">
+		<section class="day_reveal textcontainer hide_content" id="day_reveal">
 			<div class="day_reveal__header">
 				<p>Way to go...</p>
 			</div>

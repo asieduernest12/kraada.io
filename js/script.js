@@ -3,6 +3,7 @@ function GhanaianName() {
 	let _week_day;
 	let _sex;
 	let _kinships;
+	const show_content_tag=".show_content";
 
 	return {
 		findDay,
@@ -13,11 +14,12 @@ function GhanaianName() {
 		goToDayRevealSection,
 		reveal,
 		navigate,
+		scrollAction
 	};
 
 	function navigate(destination) {
 		let _destination = destination ?? "#";
-		window.location = window.location.pathname + _destination;
+		showContent(destination);
 	}
 	function goToDaySection(event) {
 		event.preventDefault();
@@ -86,11 +88,35 @@ function GhanaianName() {
 				.reverse(), //reverse sort to obtain a descending order array
 		];
 	}
+
+	
+	function hideContent(){
+		let _content = document.querySelector(show_content_tag);
+		if (_content) _content.classList.remove("show_content")
+	}
+
+	function showContent(_id){
+		debugger
+		console.log('showContent called')
+		let _content = document.querySelector(_id);
+		if (_content) {hideContent();_content.classList.add("show_content"); /**_content.scrollIntoView({block:'center'});**/}
+		else showContent("#yom__landing");
+	}
+
+	function scrollAction(event){
+		console.log('scroll fired',event);
+	}
+
 }
 
 let gn = new GhanaianName();
 gn.loadKinship();
 
 (() => {
-	if (window.location.href.match("#")) gn.navigate("");
+	setTimeout(()=>{
+		//redirect to yom__landing when page refreshed from a different section
+		// if (window.location.href.match("#"))
+		 gn.navigate("#yom__landing");
+		 document.addEventListener('scroll', gn.scrollAction)
+	})
 })();

@@ -34,6 +34,7 @@ body {
 	--section-width: 95vw;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 }
 
 section,
@@ -42,7 +43,10 @@ header {
 	height: var(--section-height);
 	width: var(--section-width);
 	background: var(--background-light);
+	/* display: none; */
 }
+
+
 
 section * {
 	font-size: 3.125rem;
@@ -104,11 +108,12 @@ form {
 	font-family: "Italianno", cursive;
 }
 
-section.yom__name_sex form {
+.yom__name_sex form {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
+	width: 100%;
 }
 
 .yom__name_sex .form_group:last-of-type {
@@ -316,12 +321,12 @@ button {
 
 /* large display */
 @media (min-width: 801px) {
-	section.date_or_day {
+	/* .date_or_day {
 		display: flex;
 		flex-direction: column;
 		height: inherit;
 		min-height: var(--section-height);
-	}
+	} */
 
 	.date_section,
 	.day_section {
@@ -367,14 +372,6 @@ button {
 @media (max-width: 800px) {
 	section * {
 		font-size: 1.5rem;
-	}
-
-	section.date_or_day {
-		flex-flow: column nowrap;
-		height: unset;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 
 	.date_section,
@@ -427,4 +424,13 @@ button {
 		font-size: 8rem;
 		margin-bottom: 1.5rem;
 	}
+}
+.hide_content.show_content, .hide_content.show_content {
+	visibility: visible;
+	display: flex !important;
+}
+
+.hide_content {
+	visibility: hidden;
+	display: none;
 }
