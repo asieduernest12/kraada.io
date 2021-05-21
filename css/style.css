@@ -1,421 +1,430 @@
 /* reset */
 button p {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 body {
-    /* CSS HEX */
-    --sage: #c9cba3ff;
-    --peach: #ffe1a8ff;
-    --terra-cotta: #e26d5cff;
-    --catawba: #723d46ff;
-    --old-burgundy: #472d30ff;
-    
-    --text-light: rgb(238, 231, 231);
-    --text-dark: rgb(19, 17, 17);
-    /* --background-dark: var(--catawba);
-    --background-light: var(--sage); */
+	/* CSS HEX */
+	--sage: #c9cba3ff;
+	--peach: #ffe1a8ff;
+	--terra-cotta: #e26d5cff;
+	--catawba: #723d46ff;
+	--old-burgundy: #472d30ff;
 
-    --background-dark: #ffffff;
-    --background-light: #f7f7f7;
-    
-    background: var(--background-light);
-    display: block;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    color: var(--text-dark);
-    font-family: 'Tangerine', cursive;
-    font-size: 16px;
-    font-weight: 200;
-    
-    --section-height: 100vh;
-    --section-width: 95vw;
-    padding: 0;
-    margin: 0;
+	--text-light: rgb(238, 231, 231);
+	--text-dark: rgb(19, 17, 17);
+
+	--background-dark: #ffffff;
+	--background-light: #f7f7f7;
+
+	background: var(--background-light);
+	display: block;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	color: var(--text-dark);
+	font-family: "Tangerine", cursive;
+	font-size: 16px;
+	font-weight: 200;
+
+	--section-height: 100vh;
+	--section-width: 95vw;
+	padding: 0;
+	margin: 0;
 }
 
-section, header {
-    min-height: var(--section-height);
-    height: var(--section-height);
-    width: var(--section-width);
-    /* margin: 40px; */
-    background: var(--background-light);
-    
+section,
+header {
+	min-height: var(--section-height);
+	height: var(--section-height);
+	width: var(--section-width);
+	background: var(--background-light);
 }
 
 section * {
-    font-size: 3.125rem;
+	font-size: 3.125rem;
 }
 
 header {
-    text-align: center;
-    font-size: 1.4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../images/Rectangle\ 15.svg) ;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-    
+	text-align: center;
+	font-size: 1.4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-image: url(../images/Rectangle\ 15.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
 }
 
 /* card on header and section */
-section, header {
-    /* -webkit-box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59);
-    -moz-box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59);
-    box-shadow: 7px 6px 40px -5px rgba(0,0,0,0.59); */
-    font-size: 1.4rem;
-    /* border-radius: 10px; */
-    overflow: hidden;
-    text-align: center;
+section,
+header {
+	font-size: 1.4rem;
+	overflow: hidden;
+	text-align: center;
 }
 
 .landing__header {
-    font-size: 12.5rem;
-    visibility: hidden;
+	font-size: 12.5rem;
+	visibility: hidden;
 }
 
-.landing__action, .action__btn {
-    font-size: 2rem;
+.landing__action,
+.action__btn {
+	font-size: 2rem;
 }
 
 .action__btn {
-    background: #0000;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
+	background: #0000;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
 }
 .action__text {
-    font-family: "Gotham", monospace , Helvetica, sans-serif;
+	font-family: "Gotham", monospace, Helvetica, sans-serif;
 }
 
-
-
 .day_section form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .landing__header {
-    font-family: 'Italianno', cursive;
-    
+	font-family: "Italianno", cursive;
 }
 
 section.yom__name_sex form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 }
 
 .yom__name_sex .form_group:last-of-type {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
 }
 
 .yom__name_sex .form_group:first-of-type {
-    margin-top: 2rem;
+	margin-top: 2rem;
 }
 
 .yom__name_sex .input_group {
-    width:  20rem;
-    display: flex;
-    flex-direction: column;
+	width: 20rem;
+	display: flex;
+	flex-direction: column;
 }
 
-
-.yom__name_sex input[type=email]{
-    width: 450px;
-    height: 100px;
-    margin-top: 2rem;
-    font-size: 1.8rem;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #0000;
+.yom__name_sex input[type="email"] {
+	width: 450px;
+	height: 100px;
+	margin-top: 2rem;
+	font-size: 1.8rem;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #0000;
 }
 
 .yom__name_sex .btn_sex {
-    margin-left: 3.125rem;
-    margin-right: 3.125rem;
-    background: #0000;
-    border: none;
-    cursor: pointer;
+	margin-left: 3.125rem;
+	margin-right: 3.125rem;
+	background: #0000;
+	border: none;
+	cursor: pointer;
 }
 
 .form_group {
-    min-width: 300px;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    margin-bottom: 20px; 
+	min-width: 300px;
+	display: flex;
+	justify-content: space-between;
+	align-self: center;
+	margin-bottom: 20px;
 }
 
 .day_reveal {
-    /* background: var(--peach); */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.4rem;
-    color: var(--text-dark);
-    position: relative;
+	/* background: var(--peach); */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.4rem;
+	color: var(--text-dark);
+	position: relative;
 }
 
 .day_name {
-    text-transform: uppercase;
-    font-family: 'Engagement', cursive;
-    font-size: 18rem;
+	text-transform: uppercase;
+	font-family: "Engagement", cursive;
+	font-size: 18rem;
 }
-
 
 .group__days {
-    display: flex;
-    width: 100%;
-    font-family: "trajanusbricksregular",serif;
-    --group_days_spacing: 5rem;
+	display: flex;
+	width: 100%;
+	font-family: "trajanusbricksregular", serif;
+	--group_days_spacing: 5rem;
 }
 
-
 .group__days:first-of-type {
-    
-    justify-content: center;
+	justify-content: center;
 }
 
 .group__days .input_group {
-    width: 50%;
-    text-align: initial; 
+	width: 50%;
+	text-align: initial;
 }
 
-.group__days .input_group label{
-    margin-left: var(--group_days_spacing);
+.group__days .input_group label {
+	margin-left: var(--group_days_spacing);
 }
 
-.group__days .input_group:nth-of-type(2n+1) {
-    text-align: right;
-    
+.group__days .input_group:nth-of-type(2n + 1) {
+	text-align: right;
 }
 
-.group__days .input_group:nth-of-type(2n+1) label {
-    margin-right: var(--group_days_spacing);
+.group__days .input_group:nth-of-type(2n + 1) label {
+	margin-right: var(--group_days_spacing);
 }
 
 .group__days:first-of-type .input_group {
-    
-    text-align: center;
-    padding: 0;
+	text-align: center;
+	padding: 0;
 }
 
-.group__days:first-of-type .input_group label{
-    
-    text-align: center;
-    padding: 0;
+.group__days:first-of-type .input_group label {
+	text-align: center;
+	padding: 0;
 }
-
 
 .group__days button {
-    display: none;
+	display: none;
 }
 
 .group__days label {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .btn_date_continue {
-    margin: auto;
-    background: #0000;
-    border: none;
-    cursor: pointer;
-    color: var(--text-dark);
+	margin: auto;
+	background: #0000;
+	border: none;
+	cursor: pointer;
+	color: var(--text-dark);
 }
 
 .reveal__body {
-    margin-top: 12rem;
-    margin-bottom: 12rem;
+	margin-top: 12rem;
+	margin-bottom: 12rem;
 }
 
-.reveal__predicate, .btn_sex {
-    font-family: 'Goudy Bookletter 1911', serif;
-
+.reveal__predicate,
+.btn_sex {
+	font-family: "Goudy Bookletter 1911", serif;
 }
-
- .reveal__attributes {
-    font-family: "trajanusbricksregular",serif;
-}
-
 
 .reveal__attributes {
-    text-transform: capitalize;
+	font-family: "trajanusbricksregular", serif;
+}
+
+.reveal__attributes {
+	text-transform: capitalize;
 }
 
 .reveal__attribute_item {
-    list-style: none;
+	list-style: none;
 }
 
 .reveal__attribute_item:first-of-type {
-    text-transform: uppercase;
-    text-decoration-line: line-through;
+	text-transform: uppercase;
+	text-decoration-line: line-through;
 }
 
 input {
-    text-align: center;
-    border: none;
+	text-align: center;
+	border: none;
 }
 
 .btn {
-    border: none;
-    background: #0000;
-    cursor: pointer;
+	border: none;
+	background: #0000;
+	cursor: pointer;
 }
 
-
-
 @keyframes flickerAnimation {
-    0%   { opacity:1; }
-    50%  { opacity:0; }
-    100% { opacity:1; }
-  }
-  @-o-keyframes flickerAnimation{
-    0%   { opacity:1; }
-    50%  { opacity:0; }
-    100% { opacity:1; }
-  }
-  @-moz-keyframes flickerAnimation{
-    0%   { opacity:1; }
-    50%  { opacity:0; }
-    100% { opacity:1; }
-  }
-  @-webkit-keyframes flickerAnimation{
-    0%   { opacity:1; }
-    50%  { opacity:0; }
-    100% { opacity:1; }
-  }
-  button {
-     -webkit-animation: flickerAnimation 3.5s infinite;
-     -moz-animation: flickerAnimation 3.5s infinite;
-     -o-animation: flickerAnimation 3.5s infinite;
-      animation: flickerAnimation 3.15s infinite;
-  }
-  
-  /* large display */
-@media (min-width:801px){
-    section.date_or_day {
-        display: flex;
-        flex-direction: column;
-        height: inherit;
-        min-height: var(--section-height);
-    }
-    
-    .date_section, .day_section {
-        width: 100%;
-        height: var(--section-height);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-    
-    .date_section form {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .day_section__header, .date_section__header, .day_reveal__header {
-        margin-right: auto;
-        margin-left: 2rem;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    
-    .day_section__footer, .day_reveal__footer {
-        margin-right: 2rem;
-        margin-left: auto;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-    }
-    
-    .form__days {   
-        width: 80%;
-    }
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-o-keyframes flickerAnimation {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-moz-keyframes flickerAnimation {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes flickerAnimation {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+button {
+	-webkit-animation: flickerAnimation 3.5s infinite;
+	-moz-animation: flickerAnimation 3.5s infinite;
+	-o-animation: flickerAnimation 3.5s infinite;
+	animation: flickerAnimation 3.15s infinite;
+}
+
+/* large display */
+@media (min-width: 801px) {
+	section.date_or_day {
+		display: flex;
+		flex-direction: column;
+		height: inherit;
+		min-height: var(--section-height);
+	}
+
+	.date_section,
+	.day_section {
+		width: 100%;
+		height: var(--section-height);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+	}
+
+	.date_section form {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.day_section__header,
+	.date_section__header,
+	.day_reveal__header {
+		margin-right: auto;
+		margin-left: 2rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.day_section__footer,
+	.day_reveal__footer {
+		margin-right: 2rem;
+		margin-left: auto;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+
+	.form__days {
+		width: 80%;
+	}
 }
 
 /* mobile display */
-@media (max-width:800px){
+@media (max-width: 800px) {
+	section * {
+		font-size: 1.5rem;
+	}
 
-    section  * {
-        font-size: 1.5rem;
-    }
-    
-    section.date_or_day{
-        flex-flow: column nowrap;
-        height: unset;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .date_section, .day_section {
-        width: 100%;
-        height: 100vh;
-        margin: 20px;
-        display: flex;
-        flex-direction: column;
-        
-    }
-    
-    .form__days {
-        width: 100%;
-    }
+	section.date_or_day {
+		flex-flow: column nowrap;
+		height: unset;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-    .btn_sex {
-        margin: 0;
-        padding: 0;
-    }
+	.date_section,
+	.day_section {
+		width: 100%;
+		height: 100vh;
+		margin: 20px;
+		display: flex;
+		flex-direction: column;
+	}
 
-    
-    .group__days .input_group  {
-        text-align: center;
-        justify-content: space-between;
-    }
+	.form__days {
+		width: 100%;
+	}
 
-    .group__days .input_group:nth-of-type(2n+1) {
-        text-align: center;
-        
-    }
+	.btn_sex {
+		margin: 0;
+		padding: 0;
+	}
 
-    .group__days .input_group label , .group__days .input_group:nth-of-type(2n+1) label {
-        margin-right: unset;
-        margin-left: unset;
-        font-size: 1rem;
-    }
+	.group__days .input_group {
+		text-align: center;
+		justify-content: space-between;
+	}
 
+	.group__days .input_group:nth-of-type(2n + 1) {
+		text-align: center;
+	}
 
-    .day_section__header, .date_section__header, .day_reveal__header {
-        margin-top: auto;
-    }
-    
-    .day_section__footer, .day_reveal__footer, .date_section__footer {
-        margin-bottom: auto;
-    }
+	.group__days .input_group label,
+	.group__days .input_group:nth-of-type(2n + 1) label {
+		margin-right: unset;
+		margin-left: unset;
+		font-size: 1rem;
+	}
 
-    .day_name {
-        font-size: 8rem;
-        margin-bottom: 1.5rem;
-    }
-    
+	.day_section__header,
+	.date_section__header,
+	.day_reveal__header {
+		margin-top: auto;
+	}
+
+	.day_section__footer,
+	.day_reveal__footer,
+	.date_section__footer {
+		margin-bottom: auto;
+	}
+
+	.day_name {
+		font-size: 8rem;
+		margin-bottom: 1.5rem;
+	}
 }
