@@ -42,7 +42,7 @@ section, header {
     min-height: var(--section-height);
     height: var(--section-height);
     width: var(--section-width);
-    margin: 40px;
+    /* margin: 40px; */
     background: var(--background-light);
     
 }
@@ -60,6 +60,7 @@ header {
     align-items: center;
     background-image: url(../images/Rectangle\ 15.svg) ;
     background-repeat: no-repeat;
+    background-size: contain;
     background-position: center center;
     
 }
@@ -94,75 +95,6 @@ section, header {
     font-family: "Gotham", monospace , Helvetica, sans-serif;
 }
 
-/* large display */
-@media (min-width:801px){
-    section.date_or_day {
-        display: flex;
-        flex-direction: column;
-        height: inherit;
-        min-height: var(--section-height);
-    }
-    
-    .date_section, .day_section {
-        width: 100%;
-        height: var(--section-height);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-    
-    .date_section form {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .day_section__header, .date_section__header, .day_reveal__header {
-        margin-right: auto;
-        margin-left: 2rem;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    
-    .day_section__footer, .day_reveal__footer {
-        margin-right: 2rem;
-        margin-left: auto;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-    }
-    
-    .form__days {   
-        width: 80%;
-    }
-}
-
-/* mobile display */
-@media (max-width:800px){
-    section.date_or_day{
-        flex-flow: column nowrap;
-        height: unset;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .date_section, .day_section {
-        /* text-align: -webkit-center; */
-        width: 100%;
-        /* height: 100%; */
-        margin: 20px;
-        padding-bottom: 20px;
-        
-    }
-    
-    .form__days {
-        width: 100%;
-    }
-}
 
 
 .day_section form {
@@ -208,6 +140,7 @@ section.yom__name_sex form {
 .yom__name_sex input[type=email]{
     width: 450px;
     height: 100px;
+    margin-top: 2rem;
     font-size: 1.8rem;
     margin-left: auto;
     margin-right: auto;
@@ -376,4 +309,113 @@ input {
       animation: flickerAnimation 3.15s infinite;
   }
   
-  
+  /* large display */
+@media (min-width:801px){
+    section.date_or_day {
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+        min-height: var(--section-height);
+    }
+    
+    .date_section, .day_section {
+        width: 100%;
+        height: var(--section-height);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .date_section form {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .day_section__header, .date_section__header, .day_reveal__header {
+        margin-right: auto;
+        margin-left: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .day_section__footer, .day_reveal__footer {
+        margin-right: 2rem;
+        margin-left: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .form__days {   
+        width: 80%;
+    }
+}
+
+/* mobile display */
+@media (max-width:800px){
+
+    section  * {
+        font-size: 1.5rem;
+    }
+    
+    section.date_or_day{
+        flex-flow: column nowrap;
+        height: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .date_section, .day_section {
+        width: 100%;
+        height: 100vh;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    .form__days {
+        width: 100%;
+    }
+
+    .btn_sex {
+        margin: 0;
+        padding: 0;
+    }
+
+    
+    .group__days .input_group  {
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .group__days .input_group:nth-of-type(2n+1) {
+        text-align: center;
+        
+    }
+
+    .group__days .input_group label , .group__days .input_group:nth-of-type(2n+1) label {
+        margin-right: unset;
+        margin-left: unset;
+        font-size: 1rem;
+    }
+
+
+    .day_section__header, .date_section__header, .day_reveal__header {
+        margin-top: auto;
+    }
+    
+    .day_section__footer, .day_reveal__footer, .date_section__footer {
+        margin-bottom: auto;
+    }
+
+    .day_name {
+        font-size: 8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+}
