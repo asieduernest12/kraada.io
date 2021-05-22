@@ -3,28 +3,42 @@ function GhanaianName() {
 	let _week_day;
 	let _sex;
 	let _kinships;
+	let _email;
 	const show_content_tag = ".show_content";
 	
+	loadKinship();
+	
 	return {
-		findDay,
-		getDay,
-		getKinship,
-		loadKinship,
-		goToDaySection,
-		goToDayRevealSection,
-		reveal,
+
 		navigate,
 		scrollAction,
+		submitDate,
+		submitDay,
+		submitNameSex,
 	};
+	
+	function submitNameSex(event) {
+		event.preventDefault();
+		_sex = event.submitter.value;
+		_email = document.querySelector("input[type=email]").value;
+		goToDayRevealSection();
+	}
+	function submitDate(event) {
+		event.preventDefault();
+		
+		_week_day = findDay();
+		navigate("#yom__name_sex");
+	}
+	
+	function submitDay(event) {
+		event.preventDefault();
+		_week_day = getDay(event);
+		navigate("#yom__name_sex");
+	}
 	
 	function navigate(destination) {
 		let _destination = destination ?? "#";
 		showContent(destination);
-	}
-	function goToDaySection(event) {
-		event.preventDefault();
-		_sex = event.submitter.value;
-		if (_sex) navigate("#day_section");
 	}
 	
 	function findDay() {
@@ -37,9 +51,9 @@ function GhanaianName() {
 			return;
 		}
 		
-		_week_day = new Date(`${year}-${month}-${day}`).getDay();
+		let week_day = new Date(`${year}-${month}-${day}`).getDay();
 		
-		return (_week_day + 1) % 6; // _week_day is coming back as correct - 1, so adjustment is needed, text again in the future using current day
+		return (week_day + 1) % 6; // _week_day is coming back as correct - 1, so adjustment is needed, text again in the future using current day
 	}
 	
 	function getDay(event) {
@@ -53,12 +67,10 @@ function GhanaianName() {
 		return [_kinships[day_key][_sex], day_key];
 	}
 	
-	function goToDayRevealSection(event) {
-		event.preventDefault();
-		let _day = event.submitter.name == "find_day" ? findDay() : getDay(event);
-		_kinship = getKinship(_day, _sex);
-		
+	function goToDayRevealSection() {
+		_kinship = getKinship(_week_day, _sex);
 		reveal(_kinship);
+		navigate("#day_reveal");
 	}
 	async function loadKinship() {
 		let temp = await fetch("js/info.js").then((res) => res.json());
@@ -67,16 +79,18 @@ function GhanaianName() {
 	}
 	
 	function reveal([_kinship, day_key]) {
+		if (!!!_kinship) return false;
 		// document.querySelector("span.first_name").innerHTML = kinnames[0];
 		document.querySelector(".day_name").innerHTML = _kinship.names[0];
 		document.querySelector(".text__day").innerHTML = day_key;
 		document.querySelector(".reveal__attributes").innerHTML = order(_kinship.characteristics)
 		.map((_char) => `<li class="reveal__attribute_item">${_char}</li>`)
 		.join("");
-		navigate("#day_reveal");
 	}
 	
 	function order(characteristics) {
+		if (!characteristics.length) return [];
+		
 		return [
 			characteristics[0], //maintain lead characteristic
 			...characteristics
@@ -108,10 +122,12 @@ function GhanaianName() {
 	function scrollAction(event) {
 		console.log("scroll fired", event);
 	}
+
+	
 }
 
 let gn = new GhanaianName();
-gn.loadKinship();
+
 
 (() => {
 	setTimeout(() => {

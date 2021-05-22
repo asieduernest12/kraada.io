@@ -17,17 +17,37 @@
 	</head>
 	<body>
 		<header class="yom__landing hide_content" id="yom__landing">
-			<h1 class="landing__header">YOM</h1>
+			<h1 class="section__header"></h1>
 			<div class="landing__action">
-				<button class="action__btn" onclick="gn.navigate('#yom__name_sex')">
+				<button class="action__btn" onclick="gn.navigate('#yom__day_date_switch')">
 					<span>&RightArrow;</span>
 					<p class="action__text">FIND YOUR NAME</p>
 				</button>
 			</div>
+			<div class="section__footer"></div>
 		</header>
 
+		<section class="yom__day_date_switch hide_content" id="yom__day_date_switch">
+			<div class="section__header">
+				<p>Do you know what day of the week you were born?</p>
+			</div>
+
+			<div class="section__footer day_date_switch__footer">
+				<div class="yom__switcher_container">
+					<button class="btn btn_switch action__btn" onclick="gn.navigate('#date_section')">
+						<span>&RightArrow;</span>
+						<p>Not sure</p>
+					</button>
+					<button class="btn btn_switch action__btn" onclick="gn.navigate('#day_section')">
+						<span>&RightArrow;</span>
+						<p>Yes</p>
+					</button>
+				</div>
+			</div>
+		</section>
+
 		<section class="yom__name_sex hide_content" id="yom__name_sex">
-			<form onsubmit="gn.goToDaySection(event)" id="form__name_sex">
+			<form onsubmit="gn.submitNameSex(event)" id="form__name_sex">
 				<div class="form_group">
 					<!-- <label for="email">Name</label> -->
 					<input type="email" name="email" id="email" placeholder="Enter your email" required="true" />
@@ -35,122 +55,121 @@
 
 				<div class="form_group">
 					<div class="input_group">
-						<button class="btn_sex" type="submit" value="male">
+						<button class="btn_sex action__btn action__btn" type="submit" value="male">
 							<span>&RightArrow;</span>
-							<p>male</p>
+							<p>Male</p>
 						</button>
 					</div>
 					<div class="input_group">
-						<button class="btn_sex" type="submit" value="female">
+						<button class="btn_sex action__btn action__btn" type="submit" value="female">
 							<span>&RightArrow;</span>
-							<p>female</p>
+							<p>Female</p>
 						</button>
 					</div>
 				</div>
 			</form>
 		</section>
 
-			<section class="date_section hide_content" id="date_section">
-				<div class="date_section__header">
-					<p>enter your birth date</p>
-				</div>
-				<form onsubmit="gn.goToDayRevealSection(event,false)">
-					<div class="form_group">
-						<div class="input_group">
-							<!-- <label for="">Month</label> -->
-							<input type="number" name="month" min="1" max="12" placeholder="mm" required />
-						</div>
-						<div class="input_group">
-							<!-- <label for="">Day</label> -->
-							<input type="number" name="day" min="1" max="31" placeholder="dd" required />
-						</div>
-
-						<div class="input_group">
-							<!-- <label for="">Year</label> -->
-							<input type="number" name="year" min="1900" max="3000" placeholder="yyyy" required />
-						</div>
+		<section class="date_section hide_content" id="date_section">
+			<div class="section__header">
+				<p>enter your birth date</p>
+			</div>
+			<form onsubmit="gn.submitDate(event,false)">
+				<div class="form_group">
+					<div class="input_group">
+						<!-- <label for="">Month</label> -->
+						<input type="number" name="month" min="1" max="12" placeholder="mm" required />
+					</div>
+					<div class="input_group">
+						<!-- <label for="">Day</label> -->
+						<input type="number" name="day" min="1" max="31" placeholder="dd" required />
 					</div>
 
-					<div class="form_group">
-						<button class="btn btn-primary btn_date_continue" type="submit" value="false" name="find_day">
-							<span>&RightArrow;</span>
-						</button>
+					<div class="input_group">
+						<!-- <label for="">Year</label> -->
+						<input type="number" name="year" min="1900" max="3000" placeholder="yyyy" required />
 					</div>
-				</form>
-				<div class="date_section__footer"></div>
-			</section>
-
-			<section class="day_section hide_content" id="day_section">
-				<div class="day_section__header">
-					<p>what day were you born?</p>
 				</div>
 
-				<!-- <h1>Select my day of birth</h1> -->
-
-				<form onsubmit="gn.goToDayRevealSection(event,true)" class="form__days">
-					<div class="form_group group__days">
-						<div class="input_group">
-							<label for="day_radio_Sunday">Sunday </label>
-							<button type="submit" name="day_radio" id="day_radio_Sunday" value="0" required aria-checked="false"></button>
-							<!-- <input type="radio" name="day_radio" id="day_radio_Sunday" value="0" required aria-checked="false"> -->
-						</div>
-					</div>
-
-					<div class="form_group group__days">
-						<div class="input_group">
-							<label for="day_radio_Monday">Monday </label>
-							<button type="submit" name="day_radio" id="day_radio_Monday" value="1" required aria-checked="false"></button>
-							<!-- <input type="radio" name="day_radio" id="day_radio_Monday" value="1" required aria-checked="false"> -->
-						</div>
-						<div class="input_group">
-							<label for="day_radio_Tuesday">Tuesday </label>
-							<button type="submit" name="day_radio" id="day_radio_Tuesday" value="2" required aria-checked="false"></button>
-							<!-- <input type="radio" name="day_radio" id="day_radio_Tuesday" value="2" required aria-checked="false"> -->
-						</div>
-					</div>
-					<div class="form_group group__days"></div>
-
-					<div class="form_group group__days">
-						<div class="input_group">
-							<label for="day_radio_Wednesday">Wednesday </label>
-							<button type="submit" name="day_radio" id="day_radio_Wednesday" value="3" required aria-checked="false"></button>
-							<!-- <input type="radio" name="day_radio" id="day_radio_Wednesday" value="3" required aria-checked="false"> -->
-						</div>
-						<div class="input_group">
-							<label for="day_radio_Thursday">Thursday </label>
-							<button type="submit" name="day_radio" id="day_radio_Thursday" value="4" required aria-checked="false"></button>
-							<!-- <input type="radio" name="day_radio" id="day_radio_Thursday" value="4" required aria-checked="false"> -->
-						</div>
-					</div>
-
-					<div class="form_group group__days">
-						<div class="input_group">
-							<label for="day_radio_Friday">Friday </label>
-							<button type="submit" name="day_radio" id="day_radio_Friday" value="5" required aria-checked="false"></button>
-							<!-- <input type="radio" name="day_radio" id="day_radio_Friday" value="5" required aria-checked="false"> -->
-						</div>
-						<div class="input_group">
-							<label for="day_radio_Saturday">Saturday </label>
-							<button type="submit" name="day_radio" id="day_radio_Saturday" value="6" required aria-checked="false"></button>
-							<!-- <input type="radio" name="day_radio" id="day_radio_Saturday" value="6" required aria-checked="false"> -->
-						</div>
-					</div>
-				</form>
-
-				<div class="day_section__footer">
-					<p class="btn" onclick="gn.navigate('#date_section')">not sure?</p>
+				<div class="form_group">
+					<button class="btn btn-primary btn_date_continue action__btn" type="submit" value="false" name="find_day">
+						<span>&RightArrow;</span>
+					</button>
 				</div>
-			</section>
+			</form>
+			<div class="section__footer"></div>
 		</section>
 
-		<section class="day_reveal textcontainer hide_content" id="day_reveal">
-			<div class="day_reveal__header">
+		<section class="day_section hide_content" id="day_section">
+			<div class="section__header">
+				<p>what day were you born?</p>
+			</div>
+
+			<!-- <h1>Select my day of birth</h1> -->
+
+			<form onsubmit="gn.submitDay(event,true)" class="form__days">
+				<div class="form_group group__days">
+					<div class="input_group">
+						<label for="day_radio_Sunday">Sunday </label>
+						<button type="submit" name="day_radio" id="day_radio_Sunday" value="0" required aria-checked="false"></button>
+						<!-- <input type="radio" name="day_radio" id="day_radio_Sunday" value="0" required aria-checked="false"> -->
+					</div>
+				</div>
+
+				<div class="form_group group__days">
+					<div class="input_group">
+						<label for="day_radio_Monday">Monday </label>
+						<button type="submit" name="day_radio" id="day_radio_Monday" value="1" required aria-checked="false"></button>
+						<!-- <input type="radio" name="day_radio" id="day_radio_Monday" value="1" required aria-checked="false"> -->
+					</div>
+					<div class="input_group">
+						<label for="day_radio_Tuesday">Tuesday </label>
+						<button type="submit" name="day_radio" id="day_radio_Tuesday" value="2" required aria-checked="false"></button>
+						<!-- <input type="radio" name="day_radio" id="day_radio_Tuesday" value="2" required aria-checked="false"> -->
+					</div>
+				</div>
+				<div class="form_group group__days"></div>
+
+				<div class="form_group group__days">
+					<div class="input_group">
+						<label for="day_radio_Wednesday">Wednesday </label>
+						<button type="submit" name="day_radio" id="day_radio_Wednesday" value="3" required aria-checked="false"></button>
+						<!-- <input type="radio" name="day_radio" id="day_radio_Wednesday" value="3" required aria-checked="false"> -->
+					</div>
+					<div class="input_group">
+						<label for="day_radio_Thursday">Thursday </label>
+						<button type="submit" name="day_radio" id="day_radio_Thursday" value="4" required aria-checked="false"></button>
+						<!-- <input type="radio" name="day_radio" id="day_radio_Thursday" value="4" required aria-checked="false"> -->
+					</div>
+				</div>
+
+				<div class="form_group group__days">
+					<div class="input_group">
+						<label for="day_radio_Friday">Friday </label>
+						<button type="submit" name="day_radio" id="day_radio_Friday" value="5" required aria-checked="false"></button>
+						<!-- <input type="radio" name="day_radio" id="day_radio_Friday" value="5" required aria-checked="false"> -->
+					</div>
+					<div class="input_group">
+						<label for="day_radio_Saturday">Saturday </label>
+						<button type="submit" name="day_radio" id="day_radio_Saturday" value="6" required aria-checked="false"></button>
+						<!-- <input type="radio" name="day_radio" id="day_radio_Saturday" value="6" required aria-checked="false"> -->
+					</div>
+				</div>
+			</form>
+
+			<div class="section__footer">
+				<!-- <p class="btn" onclick="gn.navigate('#date_section')">Not sure?</p> -->
+			</div>
+		</section>
+
+		<section class="day_reveal hide_content" id="day_reveal">
+			<div class="section__header">
 				<p>Way to go...</p>
 			</div>
-			
+
 			<div class="day_reveal__body particletext confetti">
 				<div class="reveal__predicate">your day name is</div>
-				<div class="reveal__name day_name">yao</div>
+				<div class="reveal__name day_name">default yao</div>
 				<div class="reveal__attributes">
 					<li class="reveal__attribute_item">quick problem solver</li>
 					<li class="reveal__attribute_item">clever</li>
@@ -161,8 +180,8 @@
 				<!-- <span class="first_name"></span> Your Ghanaian name is <span class="day_name"></span> -->
 				<!-- <p class="affirmation"></p> -->
 			</div>
-			<div class="day_reveal__footer">
-				<p class="footer__text"><span class="text__day"></span> Born</p>
+			<div class="section__footer">
+				<p class="footer__text"><span class="text__day">default</span> Born</p>
 			</div>
 		</section>
 
