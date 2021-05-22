@@ -4,7 +4,7 @@ button p {
 	margin: 0;
 }
 
-:root{
+:root {
 	font-size: 12px;
 }
 
@@ -325,13 +325,10 @@ button {
 	animation: flickerAnimation 3.15s infinite;
 }
 
-
 .day_date_switch__footer {
 	margin: 0;
 	width: 100%;
-	
 }
-
 
 .yom__switcher_container {
 	display: flex;
@@ -341,15 +338,8 @@ button {
 	margin-right: var(--margin-x);
 }
 
-
 /* large display */
 @media (min-width: 801px) {
-	/* .date_or_day {
-		display: flex;
-		flex-direction: column;
-		height: inherit;
-		min-height: var(--section-height);
-	} */
 
 	.date_section,
 	.day_section,
@@ -384,9 +374,6 @@ button {
 		width: 80%;
 	}
 }
-
-
-
 
 /* mobile display */
 @media (max-width: 800px) {
