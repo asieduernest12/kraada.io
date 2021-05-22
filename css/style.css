@@ -70,7 +70,7 @@ header {
 	font-size: 1.4rem;
 	overflow: hidden;
 	text-align: center;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .landing__header {
