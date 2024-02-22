@@ -5,61 +5,60 @@ import { CreatePost } from "~/app/_components/create-post";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 
+const items = Array(14)
+  .fill(null)
+  .map((_, i) => ({
+    id: i,
+    name: `item ${i}`,
+    price: i * 10,
+    description: `this is item ${i}`,
+    image: `https://picsum.photos/id/870/1920/500?grayscale&blur=2`,
+  }));
+
 export default async function Home() {
   noStore();
   const hello = await api.post.hello.query({ text: "from tRPC" });
   const session = await getServerAuthSession();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <p className="text-2xl text-white">
-            {hello ? hello.greeting : "Loading tRPC query..."}
-          </p>
-
-          <div className="flex flex-col items-center justify-center gap-4">
-            <p className="text-center text-2xl text-white">
-              {session && <span>Logged in as {session.user?.name}</span>}
-            </p>
-            <Link
-              href={session ? "/api/auth/signout" : "/api/auth/signin"}
-              className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
-            >
-              {session ? "Sign out" : "Sign in"}
-            </Link>
+    <main className="flex h-[100%] min-h-screen flex-col">
+      <nav className="sticky top-0  bg-cyan-300 z-index-5 shadow-sm shadow-orange-200">
+        <ul className="flex flex-row gap-2 p-2 text-2xl uppercase">
+          <div className="left-nav-items flex gap-2">
+            <li>home</li>
           </div>
-        </div>
+          <div className="flex flex-grow gap-2"></div>
 
-        <CrudShowcase />
-      </div>
+          <div className="right-nav-items flex gap-2">
+            <li>join waitlist</li>
+            <li>checkout</li>
+          </div>
+        </ul>
+      </nav>
+
+      {/* main content area with scroll prallax for items */}
+      <section className="flex flex-grow snap-mandatory snap-y overflow-scroll snap-always flex-col gap-4 bg-green-200 p-4">
+        {items.map((item) => (
+          <Link
+            key={item.id}
+            href={`/item/${item.id}`}
+            className="flex min-h-full snap-start flex-row gap-2 rounded-md bg-white p-2"
+          >
+            <img
+              src={item.image}
+              alt={item.name}
+              className="w-[100%] snap-start object-cover object-center"
+            />
+            {/* <div className="flex flex-col gap-2">
+              <h2 className="text-2xl">{item.name}</h2>
+              <p>{item.description}</p>
+              <p>${item.price}</p>
+            </div> */}
+          </Link>
+        ))}
+      </section>
+
+      <footer className="footer bg-cyan-100 p-2 text-2xl">footer</footer>
     </main>
   );
 }
