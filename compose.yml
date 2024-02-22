@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+  client_dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /.next
+      - /node_modules
+    env_file:
+      - .env.dev
+
+  client_prod:
+    extends:
+      file: compose.yml
+      service: client_dev
+    command: "npm run build && npm run start"
+    env_file:
+      - .env.prod
+  
+  pg_dev:
+    image: postgres:11
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    env_file:
+      - .env.dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - ${DB_PATH}:/var/lib/postgresql/data
+
+  pg_prod:
+    extends:
+      file: compose.yml
+      service: pg_dev
+    env_file:
+      - .env.prod
