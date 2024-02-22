@@ -1,4 +1,4 @@
-from node:20.10.0-alpine3.13 as base
+FROM node:21.2.0 as base
 
 # Install pnpm
 RUN npm install -g pnpm
