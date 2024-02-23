@@ -21,8 +21,8 @@ export default async function Home() {
   const session = await getServerAuthSession();
 
   return (
-    <main className="flex h-[100%] min-h-screen flex-col">
-      <nav className="sticky top-0  bg-cyan-300 z-index-5 shadow-sm shadow-orange-200">
+    <main className="grid h-screen overflow-hidden bg-gray-100">
+      <nav className="z-index-5 sticky  top-0 bg-cyan-300 shadow-sm shadow-orange-200">
         <ul className="flex flex-row gap-2 p-2 text-2xl uppercase">
           <div className="left-nav-items flex gap-2">
             <li>home</li>
@@ -37,17 +37,17 @@ export default async function Home() {
       </nav>
 
       {/* main content area with scroll prallax for items */}
-      <section className="flex flex-grow snap-mandatory snap-y overflow-scroll snap-always flex-col gap-4 bg-green-200 p-4">
+      <section className="flex flex-grow snap-y snap-proximity flex-col gap-4 overflow-y-scroll bg-green-200 p-4">
         {items.map((item) => (
           <Link
             key={item.id}
             href={`/item/${item.id}`}
-            className="flex min-h-full snap-start flex-row gap-2 rounded-md bg-white p-2"
+            className="flex  min-h-full snap-start flex-row gap-2 rounded-md bg-white p-2"
           >
             <img
               src={item.image}
               alt={item.name}
-              className="w-[100%] snap-start object-cover object-center"
+              className="w-[100%] object-cover object-center"
             />
             {/* <div className="flex flex-col gap-2">
               <h2 className="text-2xl">{item.name}</h2>
