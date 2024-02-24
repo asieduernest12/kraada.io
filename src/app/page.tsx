@@ -41,7 +41,7 @@ export default async function Home() {
         {items.map((item) => (
           <Link
             key={item.id}
-            href={`/item/${item.id}`}
+            href={`/#`}
             className="flex  min-h-full snap-start flex-row gap-2 rounded-md bg-white p-2"
           >
             <img
