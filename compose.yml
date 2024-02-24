@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.8"
 
 services:
   client_dev:
@@ -8,13 +8,18 @@ services:
       target: base
     ports:
       - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=mysql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:3306/${DB_NAME}
     volumes:
       - .:/app
-      - /.next
-      - /node_modules
-      - /.pnpm*
+      - .env.development.local:/app/.env
+      - /app/.next
+      - /app/node_modules
+      - /app/.pnpm*
     env_file:
-      - .env.local
+      - .env.development.local
+    depends_on: ["${DB_HOST}"]
 
   client_prod:
     extends:
@@ -24,26 +29,33 @@ services:
       context: .
       dockerfile: Dockerfile
       target: prod
+    volumes:
+      - .env.production:/app/.env
     command: "npm run build && npm run start"
     env_file:
-      - .env
-  
-  pg_dev:
-    image: postgres:12.1
-    environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    env_file:
-      - .env.local
-    ports:
-      - "5432:5432"
-    volumes:
-      - ${DB_PATH}:/var/lib/postgresql/data
+      - .env.production
+    
 
-  pg_prod:
+  mysql_dev:
+    image: mysql:5.7
+    ports:
+      - "${DB_PORT}:3306"
+    env_file:
+      - .env.development.local
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./mysqldata/development:/var/lib/mysql
+
+  mysql_prod:
+    image: yom10-client_dev-1
     extends:
       file: compose.yml
-      service: pg_dev
+      service: mysql_dev
     env_file:
-      - .env
+      - .env.production
+    volumes:
+      - ./mysqldata/production:/var/lib/mysql

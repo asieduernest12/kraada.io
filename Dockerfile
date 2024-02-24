@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 COPY pnpm* ./
+COPY .env.development.local .env
 
 # Install dependencies
 RUN pnpm install
@@ -18,6 +19,8 @@ COPY . .
 # Expose the port
 EXPOSE 3000
 
+RUN alias _p=pnpm
+
 # Start the app
 CMD ["pnpm", "dev"]
 
@@ -26,4 +29,9 @@ CMD ["pnpm", "dev"]
 FROM base as production
 ENV NODE_ENV=production
 RUN pnpm install --only=production
+COPY .env.production .env
+
+# build project
+RUN pnpm build
+
 CMD ["pnpm", "start"]
