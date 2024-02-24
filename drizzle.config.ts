@@ -5,8 +5,8 @@ import { env } from "~/env";
 export default {
   schema: "./src/server/db/schema.ts",
   driver: "mysql2",
-  dbCredentials: {
-    uri: env.DATABASE_URL,
-  },
+  // dbCredentials: {
+  //   // uri: env.DATABASE_URL,
+  // },
   tablesFilter: ["yom1.0_*"],
 } satisfies Config;
