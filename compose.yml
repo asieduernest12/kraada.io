@@ -16,7 +16,7 @@ services:
       - .env.development.local:/app/.env
       - /app/.next
       - /app/node_modules
-      - /app/.pnpm*
+      - /app/.pnpm-store
     env_file:
       - .env.development.local
     depends_on: ["${DB_HOST}"]
