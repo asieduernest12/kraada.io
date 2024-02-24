@@ -28,7 +28,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: prod
+      target: production
     volumes:
       - .env.production:/app/.env
     command: "npm run build && npm run start"
