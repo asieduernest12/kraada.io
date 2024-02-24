@@ -58,7 +58,7 @@ export default async function Home() {
           <Link
             key={item.image}
             href={`/#`}
-            className="grid place-content-center min-h-full max-w-full overflow-hidden  snap-start flex-row gap-2 rounded-md bg-white p-2"
+            className="grid place-content-center min-h-full max-w-full overflow-hidden  snap-center flex-row gap-2 rounded-md bg-white p-2"
           >
             <img
               src={item.image}

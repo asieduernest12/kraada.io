@@ -19,7 +19,7 @@ services:
       - /app/.pnpm-store
     env_file:
       - .env.development.local
-    depends_on: ["${DB_HOST}"]
+    # depends_on: ["${DB_HOST}"]
 
   client_prod:
     extends:
